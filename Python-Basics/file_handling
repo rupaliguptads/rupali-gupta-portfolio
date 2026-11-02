@@ -1,0 +1,49 @@
+# Python File Handling Examples
+
+# Example 1:Write data to a file
+
+with open("sample.txt", "w") as file:
+    file.write("Hello, Rupali!\n")
+    file.write("I am learning Python file handling.\n")
+
+print("Data written successfully.")
+
+
+# Example 2: Read data from a file
+with open("sample.txt", "r") as file:
+    content = file.read()
+
+print("\nFile content:")
+print(content)
+
+
+# Example 3: Append data to a file
+with open("sample.txt", "a") as file:
+    file.write("I am building my GitHub portfolio.\n")
+
+print("Data appended successfully.")
+
+
+# Example 4: Read a file line by line
+print("\nReading line by line:")
+
+with open("sample.txt", "r") as file:
+    for line in file:
+        print(line.strip())
+
+
+# Example 5: Handle a missing file
+try:
+    with open("missing.txt", "r") as file:
+        print(file.read())
+except FileNotFoundError:
+    print("Error: The requested file was not found.")
+
+
+# Example 6: Count words in a file
+with open("sample.txt", "r") as file:
+    content = file.read()
+
+words = content.split()
+
+print("\nTotal words:", len(words))
