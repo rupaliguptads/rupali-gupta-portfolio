@@ -11,9 +11,11 @@ else:
 
 # Example 1: Grade Calculator
 
-marks = int(input("Enter your marks: "))
+marks = int(input("Enter your marks (0-100): "))
 
-if marks >= 90:
+if marks < 0 or marks > 100:
+    print("Invalid marks")
+elif marks >= 90:
     print("Grade A")
 elif marks >= 75:
     print("Grade B")
@@ -68,5 +70,6 @@ else:
         print("Largest:", b)
     else:
         print("Largest:", c)
+
 
 
