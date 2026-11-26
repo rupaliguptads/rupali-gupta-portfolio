@@ -249,3 +249,33 @@ axes[2].set_ylabel("Marks")
 plt.tight_layout()
 plt.show()
 
+# Step 9: Final EDA Findings
+
+print("\n===== FINAL EDA FINDINGS =====")
+
+print("\n1. Dataset Overview")
+print("Total students:", len(df_deduplicated))
+print("Total columns:", len(df_deduplicated.columns))
+
+print("\n2. Marks Summary")
+print("Average marks:", round(df_deduplicated["Marks"].mean(), 2))
+print("Highest marks:", df_deduplicated["Marks"].max())
+print("Lowest marks:", df_deduplicated["Marks"].min())
+
+print("\n3. Study Hours Summary")
+print("Average study hours:",
+      round(df_deduplicated["Study_Hours"].mean(), 2))
+
+print("\n4. City Performance")
+city_average = df_deduplicated.groupby("City")["Marks"].mean()
+print(city_average.round(2))
+
+print("\nCity with highest average marks:", city_average.idxmax())
+
+print("\n5. Study Hours and Marks")
+correlation = df_deduplicated["Study_Hours"].corr(
+    df_deduplicated["Marks"]
+)
+print("Correlation:", round(correlation, 2))
+
+print("\nEDA completed successfully!")
