@@ -54,7 +54,9 @@ print(df.dtypes)
 
 # Check for duplicate student names
 print("\nDuplicate Student Names:")
-print(df[df["Student"].duplicated()])istical Summary:")
+print(df[df["Student"].duplicated()])
+
+print("\nStatistical Summary:")
 print(df.describe())
 
 # Step 3: Handle Missing Values
